@@ -23,7 +23,7 @@ export function withdraw(value: number) {
 
   return noteCount.reduce((all, count, index) => {
     const currentNote = AVAILABLE_NOTES[index];
-    const necessaryNotes = Array(count).fill(currentNote);
+    const necessaryNotes: number[] = Array(count).fill(currentNote);
     return all.concat(necessaryNotes);
-  }, []);
+  }, [] as number[]);
 }

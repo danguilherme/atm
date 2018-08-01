@@ -1,7 +1,25 @@
 {
   "name": "atm-withdraw",
+  "version": "1.0.0",
   "description": "",
   "homepage": "https://stackblitz.com/edit/atm-withdraw",
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\"",
+    "type-check": "tsc --noEmit"
+  },
   "dependencies": {},
-  "version": "1.0.0"
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.55",
+    "@babel/core": "^7.0.0-beta.55",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.55",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.55",
+    "@babel/preset-env": "^7.0.0-beta.55",
+    "@babel/preset-typescript": "^7.0.0-beta.55",
+    "typescript": "^3.0.1"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/danguilherme/atm.git",
+  "author": "Guilherme Ventura <guilhermeventura2@gmail.com>",
+  "license": "MIT",
+  "private": true
 }
