@@ -1,4 +1,5 @@
 var path = require("path");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // Change to your "entry-point".
@@ -28,5 +29,11 @@ module.exports = {
         loader: "babel-loader"
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: "./src/index.html"
+    })
+  ]
 };
