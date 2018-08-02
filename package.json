@@ -4,6 +4,7 @@
   "description": "",
   "homepage": "https://stackblitz.com/edit/atm-withdraw",
   "scripts": {
+    "bundle": "webpack",
     "build": "tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\"",
     "type-check": "tsc --noEmit"
   },
@@ -15,7 +16,10 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.55",
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-typescript": "^7.0.0-beta.55",
-    "typescript": "^3.0.1"
+    "babel-loader": "8.0.0-beta.2",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0"
   },
   "main": "index.js",
   "repository": "https://github.com/danguilherme/atm.git",
