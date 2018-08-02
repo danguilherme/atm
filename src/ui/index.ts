@@ -1,5 +1,5 @@
 // Import stylesheets
-import '../style.css';
+import '../style.scss';
 // Import ATM
 import { withdraw } from '../atm';
 
