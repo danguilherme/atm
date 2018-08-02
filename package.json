@@ -5,7 +5,7 @@
   "homepage": "https://stackblitz.com/edit/atm-withdraw",
   "scripts": {
     "bundle:watch": "webpack --mode=development --watch",
-    "bundle": "webpack --watch",
+    "bundle": "webpack",
     "build": "tsc --emitDeclarationOnly && babel src --out-dir lib --extensions \".ts,.tsx\"",
     "type-check": "tsc --noEmit"
   },
