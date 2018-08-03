@@ -7,23 +7,35 @@
 </head>
 
 <body>
-  <form class="form">
-    <header class="app-header">
-      <h1 class="title">Welcome to your ATM</h1>
-      <p class="subtitle">Withdraw your money</p>
+  <div class="app-root">
+    <header class="header app-header">
+      <h1 class="title">Cash Machine</h1>
+      <p class="subtitle">Make withdrawal great again</p>
     </header>
-
-    <div class="form-control">
-      <label for="withdraw" class="label">Amount</label>
-      <input type="number" class="amount control" min="0">
-    </div>
-
-    <button class="submit" type="submit">Withdraw</button>
-  </form>
-
-  <section>
-    <ul class="notes"></ul>
-  </section>
+  
+    <form class="form withdrawal-form">
+      <div class="input money-withdrawal">
+        <label for="withdraw" class="label">Amount</label>
+        <div class="money money-input">
+          <input
+            id="withdraw"
+            type="number"
+            class="amount control"
+            min="0"
+            step="10"
+            placeholder="0"
+            autofocus>
+          <div class="appendix">,00</div>
+        </div>
+      </div>
+  
+      <button class="submit withdraw-button" type="submit">Withdraw</button>
+    </form>
+  
+    <section class="bills bills-section">
+      <ul class="bills bills-list"></ul>
+    </section>
+  </div>
 </body>
 
 </html>

@@ -1,8 +1,14 @@
+$theme: #69327F;
 $vertical-spacing: 15px;
+$bill-width: 150px;
+$bill-gutter: 10px;
+$bill-columns: 3;
 
 body {
+  margin: 100px 25px 50px;
   font-family: Lato, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin: 20px;
+  font-size: 16px;
+  line-height: 1.1;
 }
 
 h1 {
@@ -14,13 +20,26 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 200px auto;
-  max-width: 300px;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ($bill-width * $bill-columns) + ($bill-gutter * $bill-columns);
+
   text-align: center;
+  color: darken($theme, 20%);
+
+  cursor: default;
 
   > .header,
   > .form {
     margin-bottom: $vertical-spacing;
+  }
+}
+
+.app-header {
+  > .title {
+    color: $theme;
+    line-height: .5;
   }
 }
 
@@ -33,10 +52,10 @@ h1 {
 .money-withdrawal {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100px;
 
   > .label {
     display: block;
+    margin-bottom: $vertical-spacing / 2;
     flex: 0 1 100%;
     font-weight: bold;
   }
@@ -46,15 +65,67 @@ h1 {
   display: flex;
   min-width: 100%;
   font-size: 30px;
+  color: lighten($theme, 20%);
 
   > .control {
     flex: 1;
-    min-width: 0;
+    width: 1em;
+    padding: 0;
+
     border: none;
+    text-align: right;
+    font-size: inherit;
+    color: inherit;
+    font-weight: bold;
+
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &::placeholder {
+      color: lighten($theme, 40%);
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  > .appendix {
+    font-weight: 300;
   }
 }
 
-.money-bill {
-  display: block;
-  width: 100px;
+.withdraw-button {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: $theme;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 21px;
+  transition: background-color .1s ease-in-out;
+
+  &:focus,
+  &:hover {
+    background-color: darken($theme, 5%);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 5px 0 #000;
+  }
+}
+
+.bills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  > .bill {
+    display: block;
+    width: $bill-width;
+    margin-bottom: $bill-gutter;
+  }
 }

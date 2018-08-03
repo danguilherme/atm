@@ -8,21 +8,30 @@ import { createSvgElement } from './svg';
 
 const form = document.querySelector('.form') as HTMLInputElement;
 const amountInput = document.querySelector('.amount') as HTMLInputElement;
-const withdrawButton = document.querySelector('.submit');
-const notesList = document.querySelector('.notes') as HTMLUListElement;
+const listContainer = document.querySelector('.bills-section') as HTMLDivElement;
 
 form.addEventListener('submit', onFormSubmit);
 
-function updateNotes(withdrawal: number[]) {
-  const bills = withdrawal.map(n => createBill(n));
-  // TODO: bad for performance, create element in memory
-  bills.forEach(b => notesList.appendChild(b));
+function updateNotes(bills: number[]) {
+  const list = document.createElement('ul');
+  list.classList.add('bills', 'bills-list');
+
+  bills.forEach(bill => {
+    const billSvg = createBill(bill);
+    const li = document.createElement('li');
+
+    li.classList.add('bill');
+    li.appendChild(billSvg);
+    list.appendChild(li);
+  });
+
+  listContainer.innerHTML = '';
+  listContainer.appendChild(list);
 }
 
 function onFormSubmit(event: Event) {
-  notesList.innerHTML = '';
-  updateNotes(withdraw(getAmount()));
   event.preventDefault();
+  updateNotes(withdraw(getAmount()));
 }
 
 function getAmount() {
