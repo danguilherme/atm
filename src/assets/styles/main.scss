@@ -1,0 +1,60 @@
+$vertical-spacing: 15px;
+
+body {
+  font-family: Lato, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 200px auto;
+  max-width: 300px;
+  text-align: center;
+
+  > .header,
+  > .form {
+    margin-bottom: $vertical-spacing;
+  }
+}
+
+.withdrawal-form {
+  > .input {
+    margin-bottom: $vertical-spacing;
+  }
+}
+
+.money-withdrawal {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100px;
+
+  > .label {
+    display: block;
+    flex: 0 1 100%;
+    font-weight: bold;
+  }
+}
+
+.money-input {
+  display: flex;
+  min-width: 100%;
+  font-size: 30px;
+
+  > .control {
+    flex: 1;
+    min-width: 0;
+    border: none;
+  }
+}
+
+.money-bill {
+  display: block;
+  width: 100px;
+}

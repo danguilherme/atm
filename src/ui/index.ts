@@ -1,6 +1,6 @@
 // Import assets
-import '../style.scss';
-import moneySvg from '../assets/money.one.svg';
+import '../assets/styles/main.scss';
+import moneySvg from '../assets/img/money.one.svg';
 
 // Import ATM
 import { withdraw } from '../atm';
