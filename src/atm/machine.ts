@@ -1,7 +1,7 @@
 import fill from '../polyfills/fill';
 import { NoteUnavailableException, InvalidArgumentException } from './exceptions';
 
-export const AVAILABLE_NOTES = [100, 50, 20, 10];
+export const AVAILABLE_BILLS = [100, 50, 20, 10];
 
 export function withdraw(value: number | null) {
   if (!value) return [];
@@ -9,22 +9,22 @@ export function withdraw(value: number | null) {
 
   let remainingValue = value;
 
-  const noteCount = AVAILABLE_NOTES.map(note => {
-    const notes = Math.floor(remainingValue / note);
-    remainingValue = remainingValue - (notes * note);
-    return notes;
+  const billCount = AVAILABLE_BILLS.map(bill => {
+    const bills = Math.floor(remainingValue / bill);
+    remainingValue = remainingValue - (bills * bill);
+    return bills;
   });
 
   if (remainingValue > 0) {
     // if there's still remaining value,
-    // it means that we do not have all notes
+    // it means that we do not have all bills
     // to give to user what s/he asked for
     throw new NoteUnavailableException(`No note available for $${remainingValue}`);
   }
 
-  return noteCount.reduce((all, count, index) => {
-    const currentNote = AVAILABLE_NOTES[index];
-    const necessaryNotes: number[] = fill(Array(count), currentNote);
-    return all.concat(necessaryNotes);
+  return billCount.reduce((all, count, index) => {
+    const currentBill = AVAILABLE_BILLS[index];
+    const necessaryBills: number[] = fill(Array(count), currentBill);
+    return all.concat(necessaryBills);
   }, [] as number[]);
 }
