@@ -3,7 +3,7 @@ import { NoteUnavailableException, InvalidArgumentException } from './exceptions
 
 export const AVAILABLE_NOTES = [100, 50, 20, 10];
 
-export function withdraw(value: number) {
+export function withdraw(value: number | null) {
   if (!value) return [];
   if (value < 0) throw new InvalidArgumentException('value', value);
 
