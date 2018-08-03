@@ -1,3 +1,4 @@
+import fill from '../polyfills/fill';
 import { NoteUnavailableException, InvalidArgumentException } from './exceptions';
 
 export const AVAILABLE_NOTES = [100, 50, 20, 10];
@@ -23,7 +24,7 @@ export function withdraw(value: number) {
 
   return noteCount.reduce((all, count, index) => {
     const currentNote = AVAILABLE_NOTES[index];
-    const necessaryNotes: number[] = Array(count).fill(currentNote);
+    const necessaryNotes: number[] = fill(Array(count), currentNote);
     return all.concat(necessaryNotes);
   }, [] as number[]);
 }
