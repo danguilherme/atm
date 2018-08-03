@@ -1,6 +1,8 @@
 # Cash Machine
 > https://cash-machine.surge.sh/
 
+[![Cash Machine Screenshot](src/assets/img/screenshot.png)](https://cash-machine.surge.sh/)
+
 # Overview
 
 The project uses `yarn` as dependency manager.
