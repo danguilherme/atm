@@ -9,7 +9,8 @@
     "serve": "webpack-dev-server",
     "test:watch": "jest --watch",
     "test": "jest",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "deploy": "yarn build && surge dist/ --domain cash-machine.surge.sh"
   },
   "dependencies": {},
   "devDependencies": {
@@ -22,6 +23,7 @@
     "node-sass": "^4.9.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
+    "surge": "^0.20.1",
     "svg-inline-loader": "^0.8.0",
     "ts-jest": "^23.1.0",
     "ts-loader": "^4.4.2",
