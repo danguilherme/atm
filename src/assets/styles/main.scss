@@ -25,6 +25,10 @@ h1 {
   margin-right: auto;
   max-width: ($bill-width * $bill-columns) + ($bill-gutter * $bill-columns);
 
+  background-color: rgba($theme, .05);
+  border: 1px solid lighten($theme, 20%);
+  border-radius: 3px;
+
   text-align: center;
   color: darken($theme, 20%);
 
@@ -34,12 +38,23 @@ h1 {
   > .form {
     margin-bottom: $vertical-spacing;
   }
+
+  > .header {
+    margin-top: $vertical-spacing;
+  }
+  
+  > .bills {
+    width: 100%;
+  }
 }
 
 .app-header {
   > .title {
     color: $theme;
-    line-height: .5;
+  }
+
+  > .subtitle {
+    margin-top: -.5em;
   }
 }
 
@@ -73,6 +88,8 @@ h1 {
     padding: 0;
 
     border: none;
+    background: transparent;
+
     text-align: right;
     font-size: inherit;
     color: inherit;
